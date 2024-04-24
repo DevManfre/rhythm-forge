@@ -55,6 +55,9 @@
   font-weight: 500;
   color: #3f4f55;
 }
+#root #drum-machine .lower-machine .row .switch .line {
+  /* TODO: aggiungere regolatore on-off volume in questo stile https://www.freepik.com/icon/drum-machine_6966141 */
+}
 #root #drum-machine .lower-machine #display {
   background-color: #3f4f55;
   margin-top: 15px;

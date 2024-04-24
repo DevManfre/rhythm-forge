@@ -66,6 +66,12 @@ $display-bg: #3f4f55;
                         color: $display-bg;
                     }
                 }
+
+                .switch {
+                    .line{
+                        /* TODO: aggiungere regolatore on-off volume in questo stile https://www.freepik.com/icon/drum-machine_6966141 */
+                    }
+                }
             }
 
             #display{

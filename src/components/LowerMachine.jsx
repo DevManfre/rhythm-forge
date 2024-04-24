@@ -1,5 +1,6 @@
 import DrumPad from "./DrumPad";
 import Display from "./Display";
+import OnOffSwitch from "./OnOffSwitch";
 
 function LowerDrumMachine() {
     const drumPadsData = [
@@ -17,10 +18,13 @@ function LowerDrumMachine() {
     return (
         <div className="lower-machine">
             <div className="row">
-                <div className="drum-pads-container">
+                <div className="drum-pads-container col-sm-9">
                     {drumPadsData.map(item => {
                         return <DrumPad key={item.key} value={item.char} bgColor={item.color} />
                     })}
+                </div>
+                <div className="col-sm-4">
+                    <OnOffSwitch />
                 </div>
             </div>
             <Display />
