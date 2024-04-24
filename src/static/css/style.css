@@ -1,0 +1,38 @@
+#root {
+  background-color: #1D1F20;
+  height: 100vh;
+  width: auto;
+}
+#root #drum-machine {
+  width: 500px;
+  height: 500px;
+  border-radius: 14px;
+  overflow: hidden;
+  background-color: #596C76;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#root #drum-machine .upper-machine {
+  background-color: #ECEAEC;
+  padding: 20px;
+}
+#root #drum-machine .upper-machine .controller {
+  width: 60px;
+  height: 60px;
+  background-color: #0AB69F;
+  border-radius: 100%;
+  overflow: hidden;
+  margin: auto;
+}
+#root #drum-machine .upper-machine .controller .line {
+  background-color: #01998D;
+  height: 70%;
+  width: 12px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 10%);
+  border-radius: 10px;
+}/*# sourceMappingURL=style.css.map */

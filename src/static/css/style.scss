@@ -1,0 +1,45 @@
+$controller-size: 60px;
+$drum-machine-size: 500px;
+
+#root {
+    background-color: #1D1F20;
+    height: 100vh;
+    width: auto;
+
+    #drum-machine {
+        width: $drum-machine-size;
+        height: $drum-machine-size;
+        border-radius: 14px;
+        overflow: hidden;
+        background-color: #596C76;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        .upper-machine {
+            background-color: #ECEAEC;
+            padding: 20px;
+
+            .controller {
+                width: $controller-size;
+                height: $controller-size;
+                background-color: #0AB69F;
+                border-radius: 100%;
+                overflow: hidden;
+                margin: auto;
+
+                .line {
+                    background-color: #01998D;
+                    height: 70%;
+                    width: calc($controller-size / 5);
+                    position: relative;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, 10%);
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+}
