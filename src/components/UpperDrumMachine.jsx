@@ -6,7 +6,7 @@ function UpperDrumMachine() {
     for (let i = 0; i < 4; i++)
         controllers.push(<Controller
             style={{ rotate: `${Math.floor(Math.random() * (361))}deg` }}
-            key={i}
+            key={i + 1}
         />);
 
     return (
