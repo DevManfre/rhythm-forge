@@ -1,4 +1,5 @@
 import DrumPad from "./DrumPad";
+import Display from "./Display";
 
 function LowerDrumMachine() {
     const drumPadsData = [
@@ -15,11 +16,14 @@ function LowerDrumMachine() {
 
     return (
         <div className="lower-machine">
-            <div className="drum-pads-container">
-                {drumPadsData.map(item => {
-                    return <DrumPad key={item.key} value={item.char} bgColor={item.color}/>
-                })}
+            <div className="row">
+                <div className="drum-pads-container">
+                    {drumPadsData.map(item => {
+                        return <DrumPad key={item.key} value={item.char} bgColor={item.color} />
+                    })}
+                </div>
             </div>
+            <Display />
         </div>
     );
 }
