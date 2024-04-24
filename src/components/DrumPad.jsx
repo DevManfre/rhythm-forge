@@ -1,6 +1,6 @@
 function DrumPad({ value, bgColor }) {
     return (
-        <div className="drum-pad btn" style={{backgroundColor: bgColor}}>
+        <div id={'drumpad-' + value} className="drum-pad btn" style={{backgroundColor: bgColor}}>
             {value}
         </div>
     );
