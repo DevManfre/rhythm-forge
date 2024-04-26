@@ -1,0 +1,106 @@
+$controller-size: 60px;
+$drum-machine-size: 500px;
+$drum-pad-size: 95px;
+$lower-machine-height: calc(100% - $controller-size * 2);
+$lower-machine-padding: 15px;
+$display-bg: #3f4f55;
+$upper-machine-bg: #ECEAEC;
+$switch-line-width: 20px;
+
+#root {
+    background-color: #1D1F20;
+    height: 100vh;
+    width: auto;
+
+    #drum-machine {
+        width: $drum-machine-size;
+        height: $drum-machine-size;
+        border-radius: 14px;
+        overflow: hidden;
+        background-color: #596C76;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        .upper-machine {
+            background-color: $upper-machine-bg;
+            padding: calc($controller-size / 2);
+
+            .controller {
+                width: $controller-size;
+                height: $controller-size;
+                background-color: #0AB69F;
+                border-radius: 100%;
+                overflow: hidden;
+                margin: auto;
+
+                .line {
+                    background-color: #01998D;
+                    height: 70%;
+                    width: calc($controller-size / 5);
+                    position: relative;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, 10%);
+                    border-radius: 10px;
+                }
+            }
+        }
+
+        .lower-machine {
+            height: $lower-machine-height;
+            padding: $lower-machine-padding $lower-machine-padding * 2 $lower-machine-padding $lower-machine-padding * 2;
+
+            .row {
+                .drum-pads-container {
+                    display: grid;
+                    grid-template-columns: auto auto auto;
+                    width: min-content;
+
+                    .drum-pad {
+                        width: $drum-pad-size;
+                        height: $drum-pad-size;
+                        border-radius: 0;
+                        padding: 0;
+                        line-height: calc($drum-pad-size - 5px);
+                        font-weight: 500;
+                        color: $display-bg;
+                    }
+                }
+
+                .switch {
+                    .line {
+                        background-color: $display-bg;
+                        height: calc($drum-pad-size * 3);
+                        width: $switch-line-width;
+                        border-radius: 24px;
+                        margin: auto;
+
+                        .button {
+                            background-color: $upper-machine-bg;
+                            width: $controller-size;
+                            height: $controller-size;
+                            border-radius: 16px;
+                            position: relative;
+                            left: calc(($controller-size / -2) + $switch-line-width / 2);
+                            top: 10%;
+                        }
+                    }
+                }
+
+                .switch:nth-child(3) .line .button{
+                    top: 60%;
+                }
+            }
+
+            #display {
+                background-color: $display-bg;
+                margin-top: $lower-machine-padding;
+                margin-bottom: $lower-machine-padding;
+                height: 50px;
+                border-radius: 16px;
+            }
+        }
+    }
+}
