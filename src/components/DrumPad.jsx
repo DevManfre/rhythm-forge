@@ -1,6 +1,9 @@
-function DrumPad({ value, bgColor }) {
+function DrumPad({ value, bgColor, src }) {
+    let handleSound = () => new Audio(src).play();
+    let style = { backgroundColor: bgColor };
+
     return (
-        <div id={'drumpad-' + value} className="drum-pad btn" style={{backgroundColor: bgColor}}>
+        <div id={value} className="drum-pad btn" style={style} onClick={handleSound}>
             {value}
         </div>
     );
