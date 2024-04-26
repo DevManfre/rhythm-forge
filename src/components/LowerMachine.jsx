@@ -23,9 +23,8 @@ function LowerDrumMachine() {
                         return <DrumPad key={item.key} value={item.char} bgColor={item.color} />
                     })}
                 </div>
-                <div className="col-sm-4">
-                    <OnOffSwitch />
-                </div>
+                <OnOffSwitch />
+                <OnOffSwitch />
             </div>
             <Display />
         </div>

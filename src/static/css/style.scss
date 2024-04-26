@@ -4,6 +4,8 @@ $drum-pad-size: 95px;
 $lower-machine-height: calc(100% - $controller-size * 2);
 $lower-machine-padding: 15px;
 $display-bg: #3f4f55;
+$upper-machine-bg: #ECEAEC;
+$switch-line-width: 20px;
 
 #root {
     background-color: #1D1F20;
@@ -22,7 +24,7 @@ $display-bg: #3f4f55;
         transform: translate(-50%, -50%);
 
         .upper-machine {
-            background-color: #ECEAEC;
+            background-color: $upper-machine-bg;
             padding: calc($controller-size / 2);
 
             .controller {
@@ -68,13 +70,31 @@ $display-bg: #3f4f55;
                 }
 
                 .switch {
-                    .line{
-                        /* TODO: aggiungere regolatore on-off volume in questo stile https://www.freepik.com/icon/drum-machine_6966141 */
+                    .line {
+                        background-color: $display-bg;
+                        height: calc($drum-pad-size * 3);
+                        width: $switch-line-width;
+                        border-radius: 24px;
+                        margin: auto;
+
+                        .button {
+                            background-color: $upper-machine-bg;
+                            width: $controller-size;
+                            height: $controller-size;
+                            border-radius: 16px;
+                            position: relative;
+                            left: calc(($controller-size / -2) + $switch-line-width / 2);
+                            top: 10%;
+                        }
                     }
+                }
+
+                .switch:nth-child(3) .line .button{
+                    top: 60%;
                 }
             }
 
-            #display{
+            #display {
                 background-color: $display-bg;
                 margin-top: $lower-machine-padding;
                 margin-bottom: $lower-machine-padding;
