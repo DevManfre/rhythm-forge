@@ -1,0 +1,83 @@
+#root {
+  background-color: #1D1F20;
+  height: 100vh;
+  width: auto;
+}
+#root #drum-machine {
+  width: 500px;
+  height: 500px;
+  border-radius: 14px;
+  overflow: hidden;
+  background-color: #596C76;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#root #drum-machine .upper-machine {
+  background-color: #ECEAEC;
+  padding: 30px;
+}
+#root #drum-machine .upper-machine .controller {
+  width: 60px;
+  height: 60px;
+  background-color: #0AB69F;
+  border-radius: 100%;
+  overflow: hidden;
+  margin: auto;
+}
+#root #drum-machine .upper-machine .controller .line {
+  background-color: #01998D;
+  height: 70%;
+  width: 12px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 10%);
+  border-radius: 10px;
+}
+#root #drum-machine .lower-machine {
+  height: calc(100% - 120px);
+  padding: 15px 30px 15px 30px;
+}
+#root #drum-machine .lower-machine .row .drum-pads-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: -moz-min-content;
+  width: min-content;
+}
+#root #drum-machine .lower-machine .row .drum-pads-container .drum-pad {
+  width: 95px;
+  height: 95px;
+  border-radius: 0;
+  padding: 0;
+  line-height: 90px;
+  font-weight: 500;
+  color: #3f4f55;
+}
+#root #drum-machine .lower-machine .row .switch .line {
+  background-color: #3f4f55;
+  height: 285px;
+  width: 20px;
+  border-radius: 24px;
+  margin: auto;
+}
+#root #drum-machine .lower-machine .row .switch .line .button {
+  background-color: #ECEAEC;
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  position: relative;
+  left: -20px;
+  top: 10%;
+}
+#root #drum-machine .lower-machine .row .switch:nth-child(3) .line .button {
+  top: 60%;
+}
+#root #drum-machine .lower-machine #display {
+  background-color: #3f4f55;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  height: 50px;
+  border-radius: 16px;
+}/*# sourceMappingURL=style.css.map */
