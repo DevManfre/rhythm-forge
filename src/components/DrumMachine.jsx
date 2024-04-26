@@ -5,8 +5,10 @@ import UpperDrumMachine from './UpperDrumMachine';
 import LowerDrumMachine from './LowerMachine';
 
 function DrumMachine() {
+    let handleKeyDown = (event) => document.getElementById(event.key.toUpperCase()).click();
+
     return(
-        <div id="drum-machine">
+        <div id="drum-machine" onKeyDown={handleKeyDown} tabIndex="0">
             <UpperDrumMachine />
             <LowerDrumMachine />
         </div>
