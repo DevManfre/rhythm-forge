@@ -3,10 +3,12 @@ import { DrumMachineContext } from "../stores/DrumMachineContext";
 
 function DrumPad({ value, bgColor, src, name }) {
     let style = { backgroundColor: bgColor };
-    const {displayText, setDisplayText} = useContext(DrumMachineContext);
+    const {setDisplayText, volumeValue} = useContext(DrumMachineContext);
 
     function handleSound(event){
-        new Audio(src).play();
+        let sound = new Audio(src);
+        sound.volume = volumeValue / 100;
+        sound.play();
         setDisplayText(event.target.getAttribute('name'));
     }
 
