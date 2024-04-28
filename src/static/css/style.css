@@ -89,4 +89,24 @@
   text-transform: uppercase;
   font-size: 35px;
   font-family: MyCustomFont;
+}
+
+@media screen and (max-width: 500px) {
+  #root #drum-machine {
+    width: 400px;
+    height: 460px;
+  }
+  #root #drum-machine .upper-machine .controller:nth-child(1) {
+    display: none;
+  }
+  #root #drum-machine .lower-machine .row .drum-pads-container .drum-pad {
+    width: 80px;
+    height: 80px;
+  }
+  #root #drum-machine .lower-machine #volume {
+    margin: 0 0 0 40px;
+  }
+  #root #drum-machine .lower-machine .switch:nth-child(3) {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */

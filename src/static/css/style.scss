@@ -1,6 +1,7 @@
 $controller-size: 60px;
 $drum-machine-size: 500px;
 $drum-pad-size: 95px;
+$drum-pad-size-mobile: 80px;
 $lower-machine-height: calc(100% - $controller-size * 2);
 $lower-machine-padding: 15px;
 $display-bg: #3f4f55;
@@ -107,6 +108,32 @@ $switch-line-width: 20px;
                 text-transform: uppercase;
                 font-size: 35px;
                 font-family: MyCustomFont;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $drum-machine-size) {
+    #root #drum-machine {
+        width: 400px;
+        height: 460px;
+
+        .upper-machine .controller:nth-child(1) {
+            display: none;
+        }
+
+        .lower-machine {
+            .row .drum-pads-container .drum-pad{
+                width: $drum-pad-size-mobile;
+                height: $drum-pad-size-mobile;
+            }
+
+            #volume {
+                margin: 0 0 0 40px;
+            }
+
+            .switch:nth-child(3) {
+                display: none;
             }
         }
     }
