@@ -5,6 +5,8 @@ import Controller from "./Controller";
 import DrumPad from "./DrumPad";
 import OnOffSwitch from "./OnOffSwitch";
 
+import { DrumMachineContext } from '../stores/DrumMachineContext';
+
 import Clap from '../static/audio/clap.mp3'
 import ClosedHH from '../static/audio/closed-hh.mp3'
 import Heater1 from '../static/audio/heater-1.mp3'
@@ -37,14 +39,9 @@ function DrumMachine() {
             let drumPad = document.getElementById(event.key.toUpperCase());
             drumPad.click();
             setDisplayText(drumPad.getAttribute('name'));
-            setTimeout(() => setDisplayText(''), 1000);
         } catch (error) {
             // Drumpad key doesn't exist
         }
-    }
-
-    function handleOnClick(event){
-        console.log(event);
     }
 
     for (let i = 0; i < 4; i++)
@@ -54,31 +51,33 @@ function DrumMachine() {
         />);
 
     return (
-        <div id="drum-machine" onKeyDown={handleKeyDown} tabIndex="0">
-            <div className="upper-machine">
-                <div className="row">
-                    {controllers}
-                </div>
-            </div>
-            <div className="lower-machine">
-                <div className="row">
-                    <div className="drum-pads-container col-sm-9">
-                        {drumPads.map(item => {
-                            return <DrumPad
-                                key={item.key}
-                                value={item.char}
-                                bgColor={item.color}
-                                src={item.src}
-                                name={item.srcName}
-                            />
-                        })}
+        <DrumMachineContext.Provider value={{ displayText, setDisplayText }}>
+            <div id="drum-machine" onKeyDown={handleKeyDown} tabIndex="0">
+                <div className="upper-machine">
+                    <div className="row">
+                        {controllers}
                     </div>
-                    <OnOffSwitch />
-                    <OnOffSwitch />
                 </div>
-                <div id="display">{displayText}</div>
+                <div className="lower-machine">
+                    <div className="row">
+                        <div className="drum-pads-container col-sm-9">
+                            {drumPads.map(item => {
+                                return <DrumPad
+                                    key={item.key}
+                                    value={item.char}
+                                    bgColor={item.color}
+                                    src={item.src}
+                                    name={item.srcName}
+                                />
+                            })}
+                        </div>
+                        <OnOffSwitch />
+                        <OnOffSwitch />
+                    </div>
+                    <div id="display">{displayText}</div>
+                </div>
             </div>
-        </div>
+        </DrumMachineContext.Provider>
     );
 }
 
