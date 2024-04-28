@@ -59,24 +59,24 @@
   font-weight: 500;
   color: #3f4f55;
 }
-#root #drum-machine .lower-machine .row .switch .line {
-  background-color: #3f4f55;
-  height: 285px;
+#root #drum-machine .lower-machine .row .switch {
+  writing-mode: vertical-lr;
+  -webkit-appearance: none;
   width: 20px;
-  border-radius: 24px;
-  margin: auto;
+  margin: 0 20px 0 20px;
+  background-color: #3f4f55;
+  border-radius: 16px;
+  outline: none;
+  rotate: 180deg;
 }
-#root #drum-machine .lower-machine .row .switch .line .button {
-  background-color: #ECEAEC;
+#root #drum-machine .lower-machine .row .switch::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
   width: 60px;
   height: 60px;
+  background: #ECEAEC;
   border-radius: 16px;
-  position: relative;
-  left: -20px;
-  top: 10%;
-}
-#root #drum-machine .lower-machine .row .switch:nth-child(3) .line .button {
-  top: 60%;
+  cursor: pointer;
 }
 #root #drum-machine .lower-machine #display {
   background-color: #3f4f55;

@@ -32,6 +32,7 @@ function DrumMachine() {
     ];
     let controllers = [];
     const [displayText, setDisplayText] = useState('');
+    const [volumeValue, setVolumeValue] = useState('75');
 
     function handleKeyDown(event) {
         try {
@@ -39,10 +40,12 @@ function DrumMachine() {
             drumPad.click();
             setDisplayText(drumPad.getAttribute('name'));
         } catch (error) {
-            // Drumpad key doesn't exist
+            setVolumeValue(100);
         }
     }
-    
+
+    // TODO: fix problema dello stato dello slider incambiabile
+
     for (let i = 0; i < 4; i++)
         controllers.push(<div className="controller" key={i + 1} style={{ rotate: `${40 ** i}deg` }}><div className="line" /></div>);
 
@@ -67,8 +70,7 @@ function DrumMachine() {
                                 />
                             })}
                         </div>
-                        <OnOffSwitch />
-                        <OnOffSwitch />
+                        <input id='volume' type='range' value={volumeValue} className='switch' />
                     </div>
                     <div id="display">{displayText}</div>
                 </div>
