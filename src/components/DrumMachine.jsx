@@ -2,7 +2,6 @@ import '../static/css/style.css'
 import 'bootstrap/dist/css/bootstrap.css';
 
 import DrumPad from "./DrumPad";
-import OnOffSwitch from "./OnOffSwitch";
 
 import { DrumMachineContext } from '../stores/DrumMachineContext';
 
