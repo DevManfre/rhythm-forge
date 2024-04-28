@@ -1,7 +1,6 @@
 import '../static/css/style.css'
 import 'bootstrap/dist/css/bootstrap.css';
 
-import Controller from "./Controller";
 import DrumPad from "./DrumPad";
 import OnOffSwitch from "./OnOffSwitch";
 
@@ -29,7 +28,7 @@ function DrumMachine() {
         { key: 6, char: "D", color: "#ECEAEC", src: Heater4, srcName: 'Heater 4' },
         { key: 7, char: "Z", color: "#ECEAEC", src: KickNHat, srcName: 'Kick n\'Hat' },
         { key: 8, char: "X", color: "#4BC3EF", src: Kick, srcName: 'Kick' },
-        { key: 9, char: "C", color: "#FF5F7A", src: OpenHH, srcName: 'Open HH' },
+        { key: 9, char: "C", color: "#FF5F7A", src: OpenHH, srcName: 'Open HH' }
     ];
     let controllers = [];
     const [displayText, setDisplayText] = useState('');
@@ -43,12 +42,9 @@ function DrumMachine() {
             // Drumpad key doesn't exist
         }
     }
-
+    
     for (let i = 0; i < 4; i++)
-        controllers.push(<Controller
-            style={{ rotate: `${40 ** i}deg` }}
-            key={i + 1}
-        />);
+        controllers.push(<div className="controller" key={i + 1} style={{ rotate: `${40 ** i}deg` }}><div className="line" /></div>);
 
     return (
         <DrumMachineContext.Provider value={{ displayText, setDisplayText }}>
