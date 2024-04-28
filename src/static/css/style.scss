@@ -1,11 +1,18 @@
 $controller-size: 60px;
 $drum-machine-size: 500px;
 $drum-pad-size: 95px;
+$drum-pad-size-mobile: 80px;
 $lower-machine-height: calc(100% - $controller-size * 2);
 $lower-machine-padding: 15px;
 $display-bg: #3f4f55;
 $upper-machine-bg: #ECEAEC;
+$lower-machine-bg: #596C76;
 $switch-line-width: 20px;
+
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('../font/DrumNBass22-L32zW.ttf') format('truetype');
+}
 
 #root {
     background-color: #1D1F20;
@@ -17,7 +24,7 @@ $switch-line-width: 20px;
         height: $drum-machine-size;
         border-radius: 14px;
         overflow: hidden;
-        background-color: #596C76;
+        background-color: $lower-machine-bg;
         position: relative;
         left: 50%;
         top: 50%;
@@ -70,27 +77,24 @@ $switch-line-width: 20px;
                 }
 
                 .switch {
-                    .line {
-                        background-color: $display-bg;
-                        height: calc($drum-pad-size * 3);
-                        width: $switch-line-width;
-                        border-radius: 24px;
-                        margin: auto;
-
-                        .button {
-                            background-color: $upper-machine-bg;
-                            width: $controller-size;
-                            height: $controller-size;
-                            border-radius: 16px;
-                            position: relative;
-                            left: calc(($controller-size / -2) + $switch-line-width / 2);
-                            top: 10%;
-                        }
-                    }
+                    writing-mode: vertical-lr;
+                    -webkit-appearance: none;
+                    width: $switch-line-width;
+                    margin: 0 25px 0 25px;
+                    background-color: $display-bg;
+                    border-radius: 16px;
+                    outline: none;
+                    rotate: 180deg;
                 }
 
-                .switch:nth-child(3) .line .button{
-                    top: 60%;
+                .switch::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    appearance: none;
+                    width: $controller-size;
+                    height: $controller-size;
+                    background: $upper-machine-bg;
+                    border-radius: 16px;
+                    cursor: pointer;
                 }
             }
 
@@ -100,6 +104,52 @@ $switch-line-width: 20px;
                 margin-bottom: $lower-machine-padding;
                 height: 50px;
                 border-radius: 16px;
+                text-align: center;
+                color: $upper-machine-bg;
+                text-transform: uppercase;
+                font-size: 35px;
+                font-family: MyCustomFont;
+            }
+        }
+    }
+
+    #reference {
+        color: $upper-machine-bg;
+        text-decoration: none;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin-right: 10px;
+        font-family: MyCustomFont;
+        letter-spacing: 2px;
+    }
+
+    #reference:hover{
+        color: $lower-machine-bg;
+    }
+}
+
+@media screen and (max-width: $drum-machine-size) {
+    #root #drum-machine {
+        width: 375px;
+        height: 460px;
+
+        .upper-machine .controller:nth-child(1) {
+            display: none;
+        }
+
+        .lower-machine {
+            .row .drum-pads-container .drum-pad{
+                width: $drum-pad-size-mobile;
+                height: $drum-pad-size-mobile;
+            }
+
+            #volume {
+                margin: 0 0 0 25px;
+            }
+
+            .switch:nth-child(3) {
+                display: none;
             }
         }
     }

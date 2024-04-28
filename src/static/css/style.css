@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("../font/DrumNBass22-L32zW.ttf") format("truetype");
+}
 #root {
   background-color: #1D1F20;
   height: 100vh;
@@ -55,24 +59,24 @@
   font-weight: 500;
   color: #3f4f55;
 }
-#root #drum-machine .lower-machine .row .switch .line {
-  background-color: #3f4f55;
-  height: 285px;
+#root #drum-machine .lower-machine .row .switch {
+  writing-mode: vertical-lr;
+  -webkit-appearance: none;
   width: 20px;
-  border-radius: 24px;
-  margin: auto;
+  margin: 0 25px 0 25px;
+  background-color: #3f4f55;
+  border-radius: 16px;
+  outline: none;
+  rotate: 180deg;
 }
-#root #drum-machine .lower-machine .row .switch .line .button {
-  background-color: #ECEAEC;
+#root #drum-machine .lower-machine .row .switch::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
   width: 60px;
   height: 60px;
+  background: #ECEAEC;
   border-radius: 16px;
-  position: relative;
-  left: -20px;
-  top: 10%;
-}
-#root #drum-machine .lower-machine .row .switch:nth-child(3) .line .button {
-  top: 60%;
+  cursor: pointer;
 }
 #root #drum-machine .lower-machine #display {
   background-color: #3f4f55;
@@ -80,4 +84,42 @@
   margin-bottom: 15px;
   height: 50px;
   border-radius: 16px;
+  text-align: center;
+  color: #ECEAEC;
+  text-transform: uppercase;
+  font-size: 35px;
+  font-family: MyCustomFont;
+}
+#root #reference {
+  color: #ECEAEC;
+  text-decoration: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 10px;
+  font-family: MyCustomFont;
+  letter-spacing: 2px;
+}
+#root #reference:hover {
+  color: #596C76;
+}
+
+@media screen and (max-width: 500px) {
+  #root #drum-machine {
+    width: 375px;
+    height: 460px;
+  }
+  #root #drum-machine .upper-machine .controller:nth-child(1) {
+    display: none;
+  }
+  #root #drum-machine .lower-machine .row .drum-pads-container .drum-pad {
+    width: 80px;
+    height: 80px;
+  }
+  #root #drum-machine .lower-machine #volume {
+    margin: 0 0 0 25px;
+  }
+  #root #drum-machine .lower-machine .switch:nth-child(3) {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */
