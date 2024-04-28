@@ -80,6 +80,7 @@ function DrumMachine() {
                     <div id="display">{displayText}</div>
                 </div>
             </div>
+            <a id="reference" href='https://github.com/DevManfre'>by DevManfre</a>
         </DrumMachineContext.Provider>
     );
 }

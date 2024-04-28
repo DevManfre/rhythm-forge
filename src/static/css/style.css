@@ -90,10 +90,23 @@
   font-size: 35px;
   font-family: MyCustomFont;
 }
+#root #reference {
+  color: #ECEAEC;
+  text-decoration: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 10px;
+  font-family: MyCustomFont;
+  letter-spacing: 2px;
+}
+#root #reference:hover {
+  color: #596C76;
+}
 
 @media screen and (max-width: 500px) {
   #root #drum-machine {
-    width: 400px;
+    width: 375px;
     height: 460px;
   }
   #root #drum-machine .upper-machine .controller:nth-child(1) {
@@ -104,7 +117,7 @@
     height: 80px;
   }
   #root #drum-machine .lower-machine #volume {
-    margin: 0 0 0 40px;
+    margin: 0 0 0 25px;
   }
   #root #drum-machine .lower-machine .switch:nth-child(3) {
     display: none;

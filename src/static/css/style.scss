@@ -6,6 +6,7 @@ $lower-machine-height: calc(100% - $controller-size * 2);
 $lower-machine-padding: 15px;
 $display-bg: #3f4f55;
 $upper-machine-bg: #ECEAEC;
+$lower-machine-bg: #596C76;
 $switch-line-width: 20px;
 
 @font-face {
@@ -23,7 +24,7 @@ $switch-line-width: 20px;
         height: $drum-machine-size;
         border-radius: 14px;
         overflow: hidden;
-        background-color: #596C76;
+        background-color: $lower-machine-bg;
         position: relative;
         left: 50%;
         top: 50%;
@@ -111,11 +112,26 @@ $switch-line-width: 20px;
             }
         }
     }
+
+    #reference {
+        color: $upper-machine-bg;
+        text-decoration: none;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin-right: 10px;
+        font-family: MyCustomFont;
+        letter-spacing: 2px;
+    }
+
+    #reference:hover{
+        color: $lower-machine-bg;
+    }
 }
 
 @media screen and (max-width: $drum-machine-size) {
     #root #drum-machine {
-        width: 400px;
+        width: 375px;
         height: 460px;
 
         .upper-machine .controller:nth-child(1) {
@@ -129,7 +145,7 @@ $switch-line-width: 20px;
             }
 
             #volume {
-                margin: 0 0 0 40px;
+                margin: 0 0 0 25px;
             }
 
             .switch:nth-child(3) {
