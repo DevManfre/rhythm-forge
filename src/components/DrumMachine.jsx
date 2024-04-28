@@ -40,17 +40,21 @@ function DrumMachine() {
             drumPad.click();
             setDisplayText(drumPad.getAttribute('name'));
         } catch (error) {
-            setVolumeValue(100);
+            
         }
     }
 
-    // TODO: fix problema dello stato dello slider incambiabile
+    function handleChange(event) {
+        let volumeLevel = event.target.value;
+        setVolumeValue(volumeLevel);
+        setDisplayText('Volume: ' + volumeLevel);
+    }
 
     for (let i = 0; i < 4; i++)
         controllers.push(<div className="controller" key={i + 1} style={{ rotate: `${40 ** i}deg` }}><div className="line" /></div>);
 
     return (
-        <DrumMachineContext.Provider value={{ displayText, setDisplayText }}>
+        <DrumMachineContext.Provider value={{ displayText, setDisplayText, volumeValue }}>
             <div id="drum-machine" onKeyDown={handleKeyDown} tabIndex="0">
                 <div className="upper-machine">
                     <div className="row">
@@ -70,7 +74,8 @@ function DrumMachine() {
                                 />
                             })}
                         </div>
-                        <input id='volume' type='range' value={volumeValue} className='switch' />
+                        <input id='volume' type='range' defaultValue={volumeValue} onChange={handleChange} className='switch' />
+                        <input type='range' className='switch' onChange={() => setDisplayText('Decorative slider')}/>
                     </div>
                     <div id="display">{displayText}</div>
                 </div>
