@@ -7,6 +7,11 @@ $display-bg: #3f4f55;
 $upper-machine-bg: #ECEAEC;
 $switch-line-width: 20px;
 
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('../font/DrumNBass22-L32zW.ttf') format('truetype');
+}  
+
 #root {
     background-color: #1D1F20;
     height: 100vh;
@@ -100,6 +105,11 @@ $switch-line-width: 20px;
                 margin-bottom: $lower-machine-padding;
                 height: 50px;
                 border-radius: 16px;
+                text-align: center;
+                color: $upper-machine-bg;
+                text-transform: uppercase;
+                font-size: 30px;
+                font-family: MyCustomFont;
             }
         }
     }
