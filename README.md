@@ -10,6 +10,7 @@ A simple drum machine.
 ## How can I try it
 There are two ways to test the web application:
 - visit the [site it](https://rhythm-forge.netlify.app/) is hosted on;
+- visit the [codpen page](https://codepen.io/devmanfre/pen/zYXXjaJ) (it's an older version);
 - clone the repository and use the command `npm start` within the repository.
 
 ## Commit syntax
